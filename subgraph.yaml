@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,23 +8,15 @@ dataSources:
     source:
       address: "0x98E822D7eB9C85f2caAa59a9fBf31EBD4f281a96"
       abi: SCBV2
+      startBlock: 26067928
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - Approval
-        - ApprovalForAll
-        - Evole
-        - Feed
-        - Mint
-        - NewLockChoice
-        - OwnershipTransferred
-        - Reclaim
-        - Recovered
-        - RewardPaid
-        - Transfer
-        - UpdateLockChoice
+        - user
+        - token
+        - food
       abis:
         - name: SCBV2
           file: ./abis/SCBV2.json

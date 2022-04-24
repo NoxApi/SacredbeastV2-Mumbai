@@ -1,6 +1,23 @@
-type ExampleEntity @entity {
-  id: ID!
-  count: BigInt!
-  owner: Bytes! # address
-  approved: Bytes! # address
+type user @entity(immutable: true) {
+  id: Bytes!
+  Token: [token!]! @derivedFrom(field: "User")
+}
+type token @entity {
+  id: String!
+  evolform: BigInt!
+  race: BigInt!
+  amount: BigInt!
+  foodindex: Int!
+  User:user!
+  Exp: BigInt!
+  LastestReclaim:BigInt!
+  Food:[food!] @derivedFrom(field: "Token")
+  
+}
+
+type food @entity {
+  id: String!
+  amount: BigInt!
+  unlockweek: BigInt!
+  Token: token!
 }
